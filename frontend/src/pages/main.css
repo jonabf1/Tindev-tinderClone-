@@ -11,7 +11,7 @@
     width:100%;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
-    margin-top:50px;
+    margin-top:30px;
 }
 
 .main-container ul li {
@@ -22,8 +22,9 @@ flex-direction: column;
 .main-container ul li img{
     max-width:100%;
     border-radius: 5px 5px 0 0  ;
+    cursor: pointer;
+     }
 
-}
 .main-container ul li footer{
 flex:1;
 background: #fff;
@@ -73,3 +74,16 @@ margin-top: 5px;
     font-weight: bold;
     margin-top: 200px;
 }
+
+
+.main-container .dev-avatar{
+    max-width:80px;
+    margin: auto;
+margin-top:20px;
+    border-radius: 10px;
+display:flex;   
+justify-content: center;
+align-items: center;
+
+     }
+

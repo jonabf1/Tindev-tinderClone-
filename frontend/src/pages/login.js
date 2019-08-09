@@ -5,14 +5,17 @@ import logo from '../assets/logo.svg';
 
 export default function Login({ history }) {
     const [username, setUsername] = useState('');
+    var erro;
 
     async function handleSubmit(e) {
-        e.preventDefault();
-
-        const response = await api.post('/devs', { username });
-
-        const { _id } = response.data;
-        history.push(`/main/${_id}`);
+        try {
+            e.preventDefault();
+            const response = await api.post('/devs', { username });
+            const { _id } = response.data;
+            history.push(`/main/${_id}`);
+        } catch (err) {
+           return err;
+        }
     }
 
     return (
@@ -22,9 +25,10 @@ export default function Login({ history }) {
                 <input type="text"
                     placeholder="Digite seu usuário do Github"
                     value={username} onChange={e =>
-                      setUsername(e.target.value)}></input>
+                        setUsername(e.target.value)}></input>
                 <button type="submit">Entrar</button>
+            {erro !== 'error' ? ('') : (<p>deu erro</p>)}
             </form>
-        </div>
+        </div >
     )
 }

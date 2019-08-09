@@ -10,5 +10,6 @@ routes.post('/devs/:devId/deslikes', deslikeController.store);
 routes.get('/devs', deslikeController.index);
 routes.delete('/devs', deslikeController.delete);
 routes.post('/devs', postController.store);
+routes.get('/devs/:id', postController.store);
 
 module.exports = routes;

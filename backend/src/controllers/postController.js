@@ -7,9 +7,14 @@ module.exports = {
             const { username } = req.body;
 
             const userExists = await DevSchema.findOne({ user: username });
+            const idExistsinReact = await DevSchema.findById(req.params.id);
 
             if (userExists)
                 return res.json(userExists);
+
+            else if (idExistsinReact)
+                return res.json(idExistsinReact)
+
 
             const response = await api.get(`/${username}`);
             const { name, bio, avatar_url: avatar } = response.data;
