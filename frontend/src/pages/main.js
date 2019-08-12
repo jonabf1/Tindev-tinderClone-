@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import api from '../services/api';
 import './main.css';
+import io from 'socket.io-client';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 import like from '../assets/like.svg';
 import deslike from '../assets/dislike.svg';
+import itsmatch from '../assets/itsamatch.png';
 
 export default function Main({ match, history }) {
     const [data, setData] = useState([]); //CONTEM TODOS OS DEVS
     const [avatar, setAvatar] = useState('');
+    const [matchDev, setMatchDev] = useState(null);
 
     useEffect(() => {
         async function devAvatar() {
@@ -26,7 +29,17 @@ export default function Main({ match, history }) {
         }
         usersData();
         devAvatar();
-    }, [match.params.id])
+    }, [match.params.id]);
+
+    useEffect(() => {
+        const socket = io('http://localhost:3333', {
+            query: { user: match.params.id },
+        });
+
+        socket.on('match', dev => {
+            setMatchDev(dev);
+        });
+    }, [match.params.id]);
 
     async function handleLike(devId) {
         await api.post(`/devs/${devId}/likes`, null, {
@@ -52,7 +65,7 @@ export default function Main({ match, history }) {
             <Link to='/'>
                 <img src={logo} alt="tindev" />
             </Link>
-            <img src={avatar} alt='' className="dev-avatar"/>
+            <img src={avatar} alt='' className="dev-avatar" />
             {data.length > 0 ? (
                 <ul>
                     {data.map(item => (
@@ -74,6 +87,17 @@ export default function Main({ match, history }) {
                     ))}
                 </ul>
             ) : (<h1>Acabou :(</h1>)}
+
+            {matchDev && (
+                <div className="match-container">
+                    <img src={itsmatch} alt="It's a match" />
+                    <img className="avatar-match" src={matchDev.avatar} alt="Avatar" />
+                    <strong>{matchDev.name}</strong>
+                    <p>{matchDev.bio}</p>
+                    <button type="button" onClick={() => setMatchDev(null)}>
+                        FECHAR</button>
+                </div>
+            )}
         </div>
 
     )
