@@ -1,10 +1,11 @@
 <h1 align="center">
 TinDev
 </h1>
+
+### :rocket: Sobre
 Tinder versão para desenvolvedores
 
-
-### Como instalar
+### :rocket: Como instalar
 - $ git clone https://github.com/jonabf1/Tindev-tinderClone-
 - Vá para a pasta do repositorio
 
