@@ -1,4 +1,8 @@
-<h1 style="text-align:"center";">TinDev-TinderClone</h1>
+<h1 align="center">
+TinDev
+</h1>
+Tinder versão para desenvolvedores
+
 
 ### Como instalar
 - $ git clone https://github.com/jonabf1/Tindev-tinderClone-
