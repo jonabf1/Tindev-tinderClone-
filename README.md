@@ -21,7 +21,7 @@ Tinder Developer Version
 - yarn install (install all dependencies)
 - react-native run-ios/android (open in emulator)
 
-### :rocket: 4. Result final
+### :rocket: 4. Final result
 
 <p align="center">
 <img src="https://res.cloudinary.com/jonabf1/video/upload/v1574228530/Jonathan_Barros_Franco_LinkedIn_1_ilnzqu.gif"/>
