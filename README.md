@@ -6,20 +6,20 @@
 Tinder Developer Version
 
 ### :rocket: Como instalar
-- $ git clone https://github.com/jonabf1/Tindev-tinderClone-
-- Go to repository folder
+- `git clone https://github.com/jonabf1/Tindev-tinderClone-`
+- **Go to repository folder**
 
 #### Backend
-- yarn install (install all dependencies)
-- yarn dev (start serverr)
+- `yarn install` (install all dependencies)
+- `yarn dev` (start server)
 
 #### Frontend
-- yarn install (install all dependencies)
-- yarn start (start app web)
+- `yarn install` (install all dependencies)
+- `yarn start` (start app web)
 
 #### Mobile
-- yarn install (install all dependencies)
-- react-native run-ios/android (open in emulator)
+- `yarn install` (install all dependencies)
+- `react-native run-ios/android ` (open in emulator)
 
 ### :rocket: 4. Final result
 
